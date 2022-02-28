@@ -1,0 +1,6 @@
+@import url('../bootstrap/css/bootstrap.min.css');
+
+body        {color: #333; background: #f9f9f9;}
+
+.text-orange {color: #FF9900; font-weight: bold;}
+#wrapper {margin: auto;text-align: left; background: #fff;}

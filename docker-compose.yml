@@ -1,0 +1,41 @@
+
+version: '2'
+
+services:
+    nginx:
+        build: ./nginx/
+        ports:
+            - 80:80
+        links:
+            - php
+        volumes_from:
+            - app
+
+    php:
+        build: ./php/
+        expose:
+            - 9000
+        links:
+            - mysql
+        volumes_from:
+            - app
+
+    app:
+        image: php:7.0-fpm
+        volumes:
+            - ./sites:/var/www/html
+        command: "true"
+
+    mysql:
+        image: mysql:latest
+        environment:
+            MYSQL_ROOT_PASSWORD: password
+            MYSQL_DATABASE: sqlidb
+            MYSQL_USER: sqliuser
+            MYSQL_PASSWORD: password
+        volumes:
+            - dbdata:/var/lib/mysql
+            - ./mysql/init:/docker-entrypoint-initdb.d
+
+volumes:
+    dbdata:
