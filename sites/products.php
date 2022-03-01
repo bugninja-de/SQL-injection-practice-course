@@ -17,7 +17,7 @@
 <link href="css/style.css" rel="stylesheet" type="text/css" media="screen" />
 <script>
 	function changeColor(){
-		window.location.href="union.php?color="+$("#color").val();
+		window.location.href="products.php?color="+$("#color").val();
 	}
 </script>
 </head>
