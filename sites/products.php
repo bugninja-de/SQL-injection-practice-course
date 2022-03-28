@@ -24,6 +24,7 @@
 <body class="bg-dark">
 	<div id="wrapper" class="bg-dark mt-5 pt-5 pb-5">
 		<div class="container bg-dark text-white">
+			<?php include('nav.php'); ?>
 			<div class="w-100 p-3 justify-content-center">
 				<div class="row mb-5">
 					<div class="col-12"><strong>Query: </strong><code><?php echo $query; ?></code></div>
@@ -56,6 +57,7 @@
 				?>
 			</div>
 		</div>
+		<?php include('footer.php'); ?>
 	</div>
 <!-- Import Scripts -->
 <script src="js/jquery-1.10.2.min.js"></script>

@@ -13,8 +13,10 @@ Remove containers:
 `docker-compose rm -f -v`
 
 *URLs for SQL injection practice*
-Login form:
+Login form for basic injections:
 http://localhost/index.php
 
-Products page:
+Products page for Union Attacks:
 http://localhost/products.php
+
+For more information on SQL Injections please visit my blog at https://www.bugninja.de

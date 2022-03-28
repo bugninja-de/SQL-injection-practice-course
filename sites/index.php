@@ -17,6 +17,7 @@
 	<div id="wrapper" class="bg-dark mt-5 pt-5 pb-5">
 		<div class="container bg-dark text-white">
 <?php 
+	include('nav.php');
 	if ( !isset($_REQUEST['submit']) ){
 ?>
 			<div class="w-100 p-3 d-flex justify-content-center">
@@ -65,6 +66,7 @@
 			</div>
 <?php
 	}
+	include('footer.php');
 ?>
 	</div>
 <!-- Import Scripts -->
