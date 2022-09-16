@@ -1,6 +1,6 @@
-Bugninja.de Docker-based MySQL injection practice course
-!!! Only for use in private network !!!
-
+Bugninja.de Docker-based MySQL injection practice course  
+!!! Only for use in private network !!!  
+!!! For educational purposes only. Do not hack into any systems without permission.  !!!
 
 *Docker commands*
 Start containers for practice:
@@ -18,5 +18,8 @@ http://localhost/index.php
 
 Products page for Union Attacks:
 http://localhost/products.php
+
+Page for Blind Attacks:
+http://localhost/blind.php
 
 For more information on SQL Injections please visit my blog at https://www.bugninja.de

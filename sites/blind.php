@@ -2,6 +2,14 @@
 	include("./connection.php"); 
 	$user = $_REQUEST['user'];
 	$pass = $_REQUEST['pass'];
+	
+	$color = $_REQUEST['color'];
+	
+	if ( $color != '') { 	
+		$query = "SELECT id FROM products where color = '".$color."'";
+		$result = $mysqli->query($query);
+		$items = $result->fetch_array();
+	}
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="de">
@@ -20,8 +28,34 @@
 	include('nav.php');
 ?>
 			<div class="w-100 p-3 d-flex justify-content-center">
-				UNDER CONSTRUCTION ...
+				<form method="GET">
+					<div class="row mb-3">
+						<div class="col-12 d-flex justify-content-center">Check out your favorite color:</div>
+					</div>
+					<div class="row mb-3">
+						<div class="col-12 d-flex justify-content-center"><input type="text" name="color" value="<?php echo $color; ?>" /></div>
+					</div>
+					<div class="row mb-3">
+						<div class="col-12 d-flex justify-content-center"><input class="btn-lg" type="submit" value="Submit" name="submit" /></div>
+					</div>
+				</form>				
 			</div>
+			<?php 
+				if ( $color != '' ) {
+			?>
+			<div class="w-100 p-3 d-flex justify-content-center">
+				<?php 
+					if ( !isset($items) or sizeof($items) == 0 ) {
+						echo "<div class=\"text-danger\">Oh no, we can't offer sneakers in your favorite color :-(</div>";
+					}
+					else{
+						echo "<div class=\"text-success\">Good news: sneakers in your favorite color are available :-)</div>";
+					}
+				?>				
+			</div>
+			<?php		
+				}
+			?>
 		</div>
 	<?php include('footer.php'); ?>
 	</div>
