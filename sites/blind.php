@@ -27,6 +27,15 @@
 <?php 
 	include('nav.php');
 ?>
+			<?php 
+				if ( $color != '' ) {
+			?>
+			<div class="w-100 p-3 d-flex justify-content-center">
+				<div><strong>Query: </strong><code><?php echo $query; ?></code></div>
+			</div>
+			<?php 
+				}
+			?>		
 			<div class="w-100 p-3 d-flex justify-content-center">
 				<form method="GET">
 					<div class="row mb-3">
@@ -38,7 +47,7 @@
 					<div class="row mb-3">
 						<div class="col-12 d-flex justify-content-center"><input class="btn-lg" type="submit" value="Submit" name="submit" /></div>
 					</div>
-				</form>				
+				</form>					
 			</div>
 			<?php 
 				if ( $color != '' ) {
